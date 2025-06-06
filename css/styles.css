@@ -1,0 +1,343 @@
+/* Ubuntu Colors */
+:root {
+    --ubuntu-orange: #E95420;
+    --ubuntu-dark-orange: #C34113;
+    --ubuntu-darker-orange: #A23400;
+    --ubuntu-light-orange: #F29879;
+    --ubuntu-lighter-orange: #FADFD7;
+    --ubuntu-warm-grey: #AEA79F;
+    --ubuntu-cool-grey: #333333;
+    --ubuntu-dark-grey: #222222;
+    --ubuntu-text-grey: #111111;
+    --ubuntu-light-grey: #f7f7f7;
+    --sidebar-width: 280px;
+    --header-height: 60px;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--ubuntu-text-grey);
+    background-color: var(--ubuntu-light-grey);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--ubuntu-dark-grey);
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--ubuntu-orange);
+}
+
+.sidebar-header img.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--ubuntu-dark-orange);
+    padding-left: 25px;
+}
+
+.nav-links a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Styles */
+.content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    transition: all 0.3s ease;
+}
+
+header {
+    background-color: white;
+    padding: 0 20px;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--ubuntu-orange);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 8px 12px;
+    border: 1px solid var(--ubuntu-warm-grey);
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    width: 250px;
+}
+
+#search-button {
+    background-color: var(--ubuntu-orange);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.content-sections {
+    padding: 20px;
+}
+
+/* Section Styles */
+.section {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: var(--ubuntu-orange);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ubuntu-light-grey);
+    display: flex;
+    align-items: center;
+}
+
+.section-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-icon img {
+    max-width: 100px;
+    height: auto;
+}
+
+.subsection {
+    margin-bottom: 25px;
+}
+
+.subsection h3 {
+    color: var(--ubuntu-dark-orange);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--ubuntu-light-grey);
+}
+
+th {
+    background-color: var(--ubuntu-light-grey);
+    color: var(--ubuntu-cool-grey);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: rgba(174, 167, 159, 0.1);
+}
+
+code {
+    background-color: var(--ubuntu-light-grey);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+/* Info Box Styles */
+.info-box {
+    background-color: rgba(233, 84, 32, 0.05);
+    border-left: 4px solid var(--ubuntu-orange);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+.info-box h4 {
+    color: var(--ubuntu-dark-orange);
+    margin-bottom: 10px;
+}
+
+/* Code Block Styles */
+.code-block {
+    background-color: var(--ubuntu-cool-grey);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.code-block p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-block code {
+    background-color: transparent;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    white-space: pre-wrap;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--ubuntu-cool-grey);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    #search-input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        order: 3;
+    }
+    
+    #search-input {
+        flex: 1;
+    }
+    
+    .section {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* Utility Classes */
+.highlight {
+    background-color: rgba(233, 84, 32, 0.2);
+}
+
+/* Animation for search results */
+@keyframes highlight {
+    0% { background-color: rgba(233, 84, 32, 0.4); }
+    100% { background-color: rgba(233, 84, 32, 0.1); }
+}
+
+.search-highlight {
+    animation: highlight 1.5s ease-in-out;
+}
+

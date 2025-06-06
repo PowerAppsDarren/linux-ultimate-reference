@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu Linux Commands Cheat Sheet</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/ubuntu_cheatsheet_header.png" alt="Ubuntu Linux Commands Cheat Sheet" class="logo">
+                <h2>Ubuntu Commands</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#getting-started"><i class="fas fa-play-circle"></i> Getting Started</a></li>
+                <li><a href="#file-system"><i class="fas fa-folder"></i> File System</a></li>
+                <li><a href="#file-management"><i class="fas fa-file"></i> File Management</a></li>
+                <li><a href="#text-manipulation"><i class="fas fa-font"></i> Text Manipulation</a></li>
+                <li><a href="#system-information"><i class="fas fa-server"></i> System Information</a></li>
+                <li><a href="#package-management"><i class="fas fa-box"></i> Package Management</a></li>
+                <li><a href="#network-commands"><i class="fas fa-network-wired"></i> Network Commands</a></li>
+                <li><a href="#compression"><i class="fas fa-file-archive"></i> Compression</a></li>
+                <li><a href="#advanced-tips"><i class="fas fa-lightbulb"></i> Advanced Tips</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <header>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <h1>Ubuntu Linux Commands Cheat Sheet</h1>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search commands...">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+            </header>
+
+            <div class="content-sections">
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="section">
+                    <h2>Getting Started</h2>
+                    
+                    <div class="subsection">
+                        <h3>Terminal Shortcuts</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Shortcut</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>Ctrl+Alt+T</code></td>
+                                        <td>Open terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+C</code></td>
+                                        <td>Interrupt/kill current process</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Z</code></td>
+                                        <td>Suspend current process</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+D</code></td>
+                                        <td>Log out of current session</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+R</code></td>
+                                        <td>Search command history</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+L</code> or <code>clear</code></td>
+                                        <td>Clear terminal screen</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+A</code></td>
+                                        <td>Move cursor to beginning of line</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+E</code></td>
+                                        <td>Move cursor to end of line</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+U</code></td>
+                                        <td>Cut text from cursor to start of line</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+K</code></td>
+                                        <td>Cut text from cursor to end of line</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+W</code></td>
+                                        <td>Cut the word before the cursor</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Y</code></td>
+                                        <td>Paste text that was cut</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Tab</code></td>
+                                        <td>Auto-complete commands or filenames</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Up/Down Arrow</code></td>
+                                        <td>Navigate through command history</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Basic Navigation</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>pwd</code></td>
+                                        <td>Print working directory</td>
+                                        <td><code>pwd</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd directory</code></td>
+                                        <td>Change to specified directory</td>
+                                        <td><code>cd Documents</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd</code></td>
+                                        <td>Change to home directory</td>
+                                        <td><code>cd</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd ..</code></td>
+                                        <td>Move up one directory</td>
+                                        <td><code>cd ..</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd -</code></td>
+                                        <td>Return to previous directory</td>
+                                        <td><code>cd -</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Help Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>man command</code></td>
+                                        <td>Display manual for command</td>
+                                        <td><code>man ls</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>command --help</code></td>
+                                        <td>Display help for command</td>
+                                        <td><code>ls --help</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>info command</code></td>
+                                        <td>Display command documentation</td>
+                                        <td><code>info grep</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>whatis command</code></td>
+                                        <td>Display one-line command description</td>
+                                        <td><code>whatis ls</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- File System Section -->
+                <section id="file-system" class="section">
+                    <h2>File System Navigation</h2>
+                    <div class="section-icon">
+                        <img src="images/file_system_icon.png" alt="File System Icon">
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Listing Files and Directories</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ls</code></td>
+                                        <td>List directory contents</td>
+                                        <td><code>ls</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -l</code></td>
+                                        <td>List with detailed information</td>
+                                        <td><code>ls -l</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -a</code></td>
+                                        <td>List all files (including hidden)</td>
+                                        <td><code>ls -a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -la</code></td>
+                                        <td>Combine -l and -a options</td>
+                                        <td><code>ls -la</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -lh</code></td>
+                                        <td>List with human-readable file sizes</td>
+                                        <td><code>ls -lh</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -R</code></td>
+                                        <td>List recursively (include subdirectories)</td>
+                                        <td><code>ls -R</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls -t</code></td>
+                                        <td>Sort by modification time</td>
+                                        <td><code>ls -t</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Finding Files and Directories</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>find dir -name pattern</code></td>
+                                        <td>Find files by name</td>
+                                        <td><code>find /home -name "*.txt"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>find dir -type d -name pattern</code></td>
+                                        <td>Find directories by name</td>
+                                        <td><code>find /home -type d -name "Documents"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>locate pattern</code></td>
+                                        <td>Find files using database</td>
+                                        <td><code>locate "*.conf"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>which command</code></td>
+                                        <td>Show full path of command</td>
+                                        <td><code>which python3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>whereis command</code></td>
+                                        <td>Locate binary, source, and manual</td>
+                                        <td><code>whereis grep</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- File Management Section -->
+                <section id="file-management" class="section">
+                    <h2>File Management</h2>
+
+                    <div class="subsection">
+                        <h3>Creating Files and Directories</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>touch file</code></td>
+                                        <td>Create empty file or update timestamp</td>
+                                        <td><code>touch newfile.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mkdir dir</code></td>
+                                        <td>Create directory</td>
+                                        <td><code>mkdir newdir</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mkdir -p dir1/dir2/dir3</code></td>
+                                        <td>Create nested directories</td>
+                                        <td><code>mkdir -p path/to/dir</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Copying, Moving, and Renaming</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cp source dest</code></td>
+                                        <td>Copy file</td>
+                                        <td><code>cp file.txt backup.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cp -r source dest</code></td>
+                                        <td>Copy directory recursively</td>
+                                        <td><code>cp -r dir1 dir2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv source dest</code></td>
+                                        <td>Move or rename file/directory</td>
+                                        <td><code>mv file.txt newname.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv source dest/</code></td>
+                                        <td>Move file to directory</td>
+                                        <td><code>mv file.txt Documents/</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Deleting Files and Directories</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>rm file</code></td>
+                                        <td>Remove file</td>
+                                        <td><code>rm file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm -i file</code></td>
+                                        <td>Remove with confirmation</td>
+                                        <td><code>rm -i file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm -r dir</code></td>
+                                        <td>Remove directory recursively</td>
+                                        <td><code>rm -r dir</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm -rf dir</code></td>
+                                        <td>Force remove directory recursively</td>
+                                        <td><code>rm -rf dir</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rmdir dir</code></td>
+                                        <td>Remove empty directory</td>
+                                        <td><code>rmdir emptydir</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>File Permissions</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>chmod permissions file</code></td>
+                                        <td>Change file permissions</td>
+                                        <td><code>chmod 755 script.sh</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chmod u+x file</code></td>
+                                        <td>Add execute permission for user</td>
+                                        <td><code>chmod u+x script.sh</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chown user:group file</code></td>
+                                        <td>Change file owner and group</td>
+                                        <td><code>chown john:users file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chgrp group file</code></td>
+                                        <td>Change file group</td>
+                                        <td><code>chgrp users file.txt</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Permission Numbers</h4>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Number</th>
+                                            <th>Permission</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>---</td>
+                                            <td>No permissions</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>--x</td>
+                                            <td>Execute only</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>-w-</td>
+                                            <td>Write only</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>-wx</td>
+                                            <td>Write and execute</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>r--</td>
+                                            <td>Read only</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>r-x</td>
+                                            <td>Read and execute</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>rw-</td>
+                                            <td>Read and write</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>rwx</td>
+                                            <td>Read, write, and execute</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Text Manipulation Section -->
+                <section id="text-manipulation" class="section">
+                    <h2>Text Manipulation</h2>
+
+                    <div class="subsection">
+                        <h3>Viewing File Contents</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cat file</code></td>
+                                        <td>Display file contents</td>
+                                        <td><code>cat file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>less file</code></td>
+                                        <td>View file with pagination</td>
+                                        <td><code>less large_file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>more file</code></td>
+                                        <td>View file page by page</td>
+                                        <td><code>more large_file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>head file</code></td>
+                                        <td>Display first 10 lines</td>
+                                        <td><code>head file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>head -n N file</code></td>
+                                        <td>Display first N lines</td>
+                                        <td><code>head -n 20 file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tail file</code></td>
+                                        <td>Display last 10 lines</td>
+                                        <td><code>tail file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tail -n N file</code></td>
+                                        <td>Display last N lines</td>
+                                        <td><code>tail -n 20 file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tail -f file</code></td>
+                                        <td>Follow file updates in real-time</td>
+                                        <td><code>tail -f /var/log/syslog</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Editing Files</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>nano file</code></td>
+                                        <td>Edit with Nano editor</td>
+                                        <td><code>nano file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vim file</code></td>
+                                        <td>Edit with Vim editor</td>
+                                        <td><code>vim file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gedit file</code></td>
+                                        <td>Edit with GUI editor (if available)</td>
+                                        <td><code>gedit file.txt</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Searching Within Files</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>grep pattern file</code></td>
+                                        <td>Search for pattern in file</td>
+                                        <td><code>grep "error" log.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep -i pattern file</code></td>
+                                        <td>Case-insensitive search</td>
+                                        <td><code>grep -i "error" log.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep -r pattern dir</code></td>
+                                        <td>Recursive search in directory</td>
+                                        <td><code>grep -r "TODO" src/</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep -v pattern file</code></td>
+                                        <td>Show lines NOT matching pattern</td>
+                                        <td><code>grep -v "debug" log.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep -n pattern file</code></td>
+                                        <td>Show line numbers</td>
+                                        <td><code>grep -n "error" log.txt</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Information Section -->
+                <section id="system-information" class="section">
+                    <h2>System Information</h2>
+                    <div class="section-icon">
+                        <img src="images/system_icon.png" alt="System Information Icon">
+                    </div>
+
+                    <div class="subsection">
+                        <h3>System and Hardware Info</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>uname -a</code></td>
+                                        <td>Show kernel information</td>
+                                        <td><code>uname -a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lsb_release -a</code></td>
+                                        <td>Show Ubuntu version</td>
+                                        <td><code>lsb_release -a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>hostnamectl</code></td>
+                                        <td>Show system and hostname info</td>
+                                        <td><code>hostnamectl</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cat /proc/cpuinfo</code></td>
+                                        <td>Show CPU information</td>
+                                        <td><code>cat /proc/cpuinfo</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lscpu</code></td>
+                                        <td>Display CPU architecture info</td>
+                                        <td><code>lscpu</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>free -h</code></td>
+                                        <td>Show memory usage (human-readable)</td>
+                                        <td><code>free -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lshw</code></td>
+                                        <td>List hardware</td>
+                                        <td><code>sudo lshw</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lspci</code></td>
+                                        <td>List PCI devices</td>
+                                        <td><code>lspci</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lsusb</code></td>
+                                        <td>List USB devices</td>
+                                        <td><code>lsusb</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dmidecode</code></td>
+                                        <td>Display hardware info from BIOS</td>
+                                        <td><code>sudo dmidecode</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Disk Usage and Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>df -h</code></td>
+                                        <td>Show disk space usage</td>
+                                        <td><code>df -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>du -h path</code></td>
+                                        <td>Show directory space usage</td>
+                                        <td><code>du -h /home</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>du -sh path</code></td>
+                                        <td>Summarize directory space usage</td>
+                                        <td><code>du -sh /var/log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ncdu path</code></td>
+                                        <td>Interactive disk usage analyzer</td>
+                                        <td><code>ncdu /home</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lsblk</code></td>
+                                        <td>List block devices</td>
+                                        <td><code>lsblk</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>fdisk -l</code></td>
+                                        <td>List disk partitions</td>
+                                        <td><code>sudo fdisk -l</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mount</code></td>
+                                        <td>Show mounted filesystems</td>
+                                        <td><code>mount</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>umount device</code></td>
+                                        <td>Unmount filesystem</td>
+                                        <td><code>sudo umount /dev/sdb1</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Process Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ps</code></td>
+                                        <td>Show running processes</td>
+                                        <td><code>ps</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ps aux</code></td>
+                                        <td>Show all processes in detail</td>
+                                        <td><code>ps aux</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>pgrep pattern</code></td>
+                                        <td>Find process ID by name</td>
+                                        <td><code>pgrep firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>top</code></td>
+                                        <td>Dynamic real-time process viewer</td>
+                                        <td><code>top</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>htop</code></td>
+                                        <td>Interactive process viewer</td>
+                                        <td><code>htop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>kill pid</code></td>
+                                        <td>Terminate process by ID</td>
+                                        <td><code>kill 1234</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>killall name</code></td>
+                                        <td>Terminate processes by name</td>
+                                        <td><code>killall firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>pkill pattern</code></td>
+                                        <td>Kill processes by pattern</td>
+                                        <td><code>pkill -9 firefox</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Service Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>systemctl status service</code></td>
+                                        <td>Check service status</td>
+                                        <td><code>systemctl status ssh</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl start service</code></td>
+                                        <td>Start service</td>
+                                        <td><code>sudo systemctl start apache2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl stop service</code></td>
+                                        <td>Stop service</td>
+                                        <td><code>sudo systemctl stop apache2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl restart service</code></td>
+                                        <td>Restart service</td>
+                                        <td><code>sudo systemctl restart apache2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl enable service</code></td>
+                                        <td>Enable service at boot</td>
+                                        <td><code>sudo systemctl enable ssh</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl disable service</code></td>
+                                        <td>Disable service at boot</td>
+                                        <td><code>sudo systemctl disable cups</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Package Management Section -->
+                <section id="package-management" class="section">
+                    <h2>Package Management</h2>
+
+                    <div class="subsection">
+                        <h3>APT Commands (Ubuntu-specific)</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>apt update</code></td>
+                                        <td>Update package lists</td>
+                                        <td><code>sudo apt update</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt upgrade</code></td>
+                                        <td>Upgrade installed packages</td>
+                                        <td><code>sudo apt upgrade</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt full-upgrade</code></td>
+                                        <td>Upgrade with package removal if needed</td>
+                                        <td><code>sudo apt full-upgrade</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt install package</code></td>
+                                        <td>Install package</td>
+                                        <td><code>sudo apt install firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt remove package</code></td>
+                                        <td>Remove package</td>
+                                        <td><code>sudo apt remove firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt purge package</code></td>
+                                        <td>Remove package and configurations</td>
+                                        <td><code>sudo apt purge firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt autoremove</code></td>
+                                        <td>Remove unused dependencies</td>
+                                        <td><code>sudo apt autoremove</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt search keyword</code></td>
+                                        <td>Search for packages</td>
+                                        <td><code>apt search python3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt show package</code></td>
+                                        <td>Show package details</td>
+                                        <td><code>apt show firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt list --installed</code></td>
+                                        <td>List installed packages</td>
+                                        <td><code>apt list --installed</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>DPKG Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>dpkg -i package.deb</code></td>
+                                        <td>Install .deb package</td>
+                                        <td><code>sudo dpkg -i package.deb</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -r package</code></td>
+                                        <td>Remove package</td>
+                                        <td><code>sudo dpkg -r package</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -l</code></td>
+                                        <td>List installed packages</td>
+                                        <td><code>dpkg -l</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -s package</code></td>
+                                        <td>Show package status</td>
+                                        <td><code>dpkg -s firefox</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -L package</code></td>
+                                        <td>List files installed by package</td>
+                                        <td><code>dpkg -L bash</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -S file</code></td>
+                                        <td>Find which package owns file</td>
+                                        <td><code>dpkg -S /bin/bash</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Network Commands Section -->
+                <section id="network-commands" class="section">
+                    <h2>Network Commands</h2>
+                    <div class="section-icon">
+                        <img src="images/network_icon.png" alt="Network Commands Icon">
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Network Configuration</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ip a</code></td>
+                                        <td>Show network interfaces</td>
+                                        <td><code>ip a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ip addr show dev eth0</code></td>
+                                        <td>Show specific interface</td>
+                                        <td><code>ip addr show dev eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ifconfig</code></td>
+                                        <td>Show network interfaces (legacy)</td>
+                                        <td><code>ifconfig</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iwconfig</code></td>
+                                        <td>Show wireless interfaces</td>
+                                        <td><code>iwconfig</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nmcli</code></td>
+                                        <td>NetworkManager command-line tool</td>
+                                        <td><code>nmcli device status</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nmtui</code></td>
+                                        <td>NetworkManager text UI</td>
+                                        <td><code>nmtui</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dhclient interface</code></td>
+                                        <td>Request IP from DHCP server</td>
+                                        <td><code>sudo dhclient eth0</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Connectivity Testing</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ping host</code></td>
+                                        <td>Test connectivity to host</td>
+                                        <td><code>ping google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>traceroute host</code></td>
+                                        <td>Trace route to host</td>
+                                        <td><code>traceroute google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mtr host</code></td>
+                                        <td>Combine ping and traceroute</td>
+                                        <td><code>mtr google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dig domain</code></td>
+                                        <td>DNS lookup</td>
+                                        <td><code>dig google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nslookup domain</code></td>
+                                        <td>DNS lookup (alternative)</td>
+                                        <td><code>nslookup google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>host domain</code></td>
+                                        <td>DNS lookup (simple)</td>
+                                        <td><code>host google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>whois domain</code></td>
+                                        <td>Domain registration info</td>
+                                        <td><code>whois google.com</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Network Monitoring</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>netstat -tuln</code></td>
+                                        <td>Show listening ports</td>
+                                        <td><code>netstat -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ss -tuln</code></td>
+                                        <td>Show socket statistics (modern)</td>
+                                        <td><code>ss -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lsof -i</code></td>
+                                        <td>List open network files</td>
+                                        <td><code>sudo lsof -i</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -i interface</code></td>
+                                        <td>Capture network packets</td>
+                                        <td><code>sudo tcpdump -i eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iftop</code></td>
+                                        <td>Monitor network bandwidth</td>
+                                        <td><code>sudo iftop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nethogs</code></td>
+                                        <td>Monitor per-process network usage</td>
+                                        <td><code>sudo nethogs</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Compression Section -->
+                <section id="compression" class="section">
+                    <h2>Compression and Archiving</h2>
+
+                    <div class="subsection">
+                        <h3>TAR Archives</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tar -cvf archive.tar files</code></td>
+                                        <td>Create tar archive</td>
+                                        <td><code>tar -cvf backup.tar /home/user/docs</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -xvf archive.tar</code></td>
+                                        <td>Extract tar archive</td>
+                                        <td><code>tar -xvf backup.tar</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -tvf archive.tar</code></td>
+                                        <td>List contents of tar archive</td>
+                                        <td><code>tar -tvf backup.tar</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Compressed Archives</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tar -czvf archive.tar.gz files</code></td>
+                                        <td>Create gzip compressed archive</td>
+                                        <td><code>tar -czvf backup.tar.gz /home/user/docs</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -xzvf archive.tar.gz</code></td>
+                                        <td>Extract gzip compressed archive</td>
+                                        <td><code>tar -xzvf backup.tar.gz</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -cjvf archive.tar.bz2 files</code></td>
+                                        <td>Create bzip2 compressed archive</td>
+                                        <td><code>tar -cjvf backup.tar.bz2 /home/user/docs</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -xjvf archive.tar.bz2</code></td>
+                                        <td>Extract bzip2 compressed archive</td>
+                                        <td><code>tar -xjvf backup.tar.bz2</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>ZIP Files</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>zip -r archive.zip files</code></td>
+                                        <td>Create zip archive</td>
+                                        <td><code>zip -r backup.zip /home/user/docs</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unzip archive.zip</code></td>
+                                        <td>Extract zip archive</td>
+                                        <td><code>unzip backup.zip</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unzip -l archive.zip</code></td>
+                                        <td>List contents of zip archive</td>
+                                        <td><code>unzip -l backup.zip</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Tips Section -->
+                <section id="advanced-tips" class="section">
+                    <h2>Advanced Tips and Tricks</h2>
+
+                    <div class="subsection">
+                        <h3>Command Chaining</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Operator</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cmd1 ; cmd2</code></td>
+                                        <td>Run cmd1 then cmd2</td>
+                                        <td><code>echo "Hello" ; echo "World"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd1 && cmd2</code></td>
+                                        <td>Run cmd2 only if cmd1 succeeds</td>
+                                        <td><code>mkdir dir && cd dir</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd1 || cmd2</code></td>
+                                        <td>Run cmd2 only if cmd1 fails</td>
+                                        <td><code>ping -c1 google.com || echo "Offline"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd1 | cmd2</code></td>
+                                        <td>Pipe output of cmd1 to cmd2</td>
+                                        <td><code>ls -l | grep ".txt"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd &</code></td>
+                                        <td>Run cmd in background</td>
+                                        <td><code>firefox &</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>(cmd1 ; cmd2)</code></td>
+                                        <td>Group commands</td>
+                                        <td><code>(cd dir && ls -l) | grep ".txt"</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Redirections</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Operator</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cmd > file</code></td>
+                                        <td>Redirect stdout to file (overwrite)</td>
+                                        <td><code>ls > files.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd >> file</code></td>
+                                        <td>Redirect stdout to file (append)</td>
+                                        <td><code>echo "text" >> log.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd 2> file</code></td>
+                                        <td>Redirect stderr to file</td>
+                                        <td><code>find / -name "file" 2> errors.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd &> file</code></td>
+                                        <td>Redirect both stdout and stderr</td>
+                                        <td><code>find / -name "file" &> output.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cmd < file</code></td>
+                                        <td>Use file as stdin</td>
+                                        <td><code>sort < unsorted.txt</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Useful Aliases</h3>
+                        <div class="code-block">
+                            <p>Add these to your <code>~/.bashrc</code> file:</p>
+                            <pre><code># Navigation shortcuts
+alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -CF'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# System shortcuts
+alias update='sudo apt update && sudo apt upgrade'
+alias install='sudo apt install'
+alias remove='sudo apt remove'
+alias sysinfo='uname -a && lsb_release -a'
+alias diskspace='df -h'
+alias meminfo='free -m'
+alias ports='netstat -tulanp'
+
+# Safety nets
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Cron Jobs</h3>
+                        <div class="code-block">
+                            <p>Edit crontab with:</p>
+                            <pre><code>crontab -e</code></pre>
+                            
+                            <p>Cron job format:</p>
+                            <pre><code>minute hour day_of_month month day_of_week command</code></pre>
+                            
+                            <p>Examples:</p>
+                            <pre><code># Run daily at 3:30 AM
+30 3 * * * /path/to/script.sh
+
+# Run every Monday at 9:00 AM
+0 9 * * 1 /path/to/script.sh
+
+# Run every 15 minutes
+*/15 * * * * /path/to/script.sh</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer>
+                <p>Ubuntu Linux Commands Cheat Sheet - Created with ❤️ for Linux users</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
