@@ -2,6 +2,8 @@
 
 A comprehensive, interactive cheat sheet for Ubuntu Linux commands. This is a static website that requires no dependencies, build processes, or server-side components.
 
+>https://design.ubuntu.com/brand
+
 ## Features
 
 - **Comprehensive Command Reference**: Covers essential Ubuntu/Linux commands across multiple categories
