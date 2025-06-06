@@ -52,7 +52,7 @@ body {
 }
 
 .sidebar-header img.logo {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -291,71 +291,225 @@ footer {
     margin-top: 30px;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .sidebar {
-        transform: translateX(-100%);
+/* Header Controls */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--ubuntu-warm-grey);
+    color: var(--ubuntu-orange);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--ubuntu-orange);
+    color: white;
+}
+
+#clear-search {
+    background-color: var(--ubuntu-warm-grey);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    margin-left: -1px;
+}
+
+#clear-search:hover {
+    background-color: var(--ubuntu-cool-grey);
+}
+
+/* Search Stats */
+.search-stats {
+    background-color: var(--ubuntu-lighter-orange);
+    color: var(--ubuntu-darker-orange);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.search-stats i {
+    margin-right: 8px;
+}
+
+/* Copy functionality */
+.copyable {
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.copyable:hover {
+    background-color: var(--ubuntu-lighter-orange) !important;
+}
+
+.copyable::after {
+    content: "📋";
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    font-size: 0.8em;
+}
+
+.copyable:hover::after {
+    opacity: 1;
+}
+
+/* Copy notification */
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--ubuntu-orange);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.copy-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.copy-notification i {
+    margin-right: 8px;
+}
+
+/* Dark theme */
+.dark-theme {
+    --ubuntu-light-grey: #1a1a1a;
+    --ubuntu-text-grey: #e0e0e0;
+    --ubuntu-cool-grey: #2d2d2d;
+    --ubuntu-dark-grey: #0f0f0f;
+}
+
+.dark-theme .section {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.dark-theme header {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.dark-theme th {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+}
+
+.dark-theme tr:hover {
+    background-color: rgba(233, 84, 32, 0.1);
+}
+
+.dark-theme code {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+}
+
+.dark-theme .info-box {
+    background-color: rgba(233, 84, 32, 0.1);
+    border-left-color: var(--ubuntu-orange);
+}
+
+.dark-theme #search-input {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.dark-theme .search-stats {
+    background-color: rgba(233, 84, 32, 0.2);
+    color: var(--ubuntu-light-orange);
+}
+
+/* Enhanced search highlighting */
+.search-highlight {
+    background-color: rgba(233, 84, 32, 0.2) !important;
+    border-left: 4px solid var(--ubuntu-orange);
+    animation: highlight-pulse 2s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+    0%, 100% { 
+        background-color: rgba(233, 84, 32, 0.2);
     }
-    
-    .content {
-        margin-left: 0;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .sidebar.active {
-        transform: translateX(0);
-    }
-    
-    header h1 {
-        font-size: 1.2rem;
-    }
-    
-    #search-input {
-        width: 150px;
+    50% { 
+        background-color: rgba(233, 84, 32, 0.4);
     }
 }
 
+/* Better mobile responsiveness */
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 20px;
+    .header-controls {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
     }
     
     .search-container {
         width: 100%;
-        margin-top: 10px;
-        order: 3;
     }
     
     #search-input {
         flex: 1;
+        min-width: 0;
     }
     
-    .section {
-        padding: 15px;
+    .sidebar-header img.logo {
+        max-width: 60%;
+    }
+    
+    .nav-links a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .copy-notification {
+        right: 10px;
+        top: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Improved table responsiveness */
+@media (max-width: 600px) {
+    .table-container {
+        font-size: 0.85rem;
     }
     
     th, td {
-        padding: 8px 10px;
+        padding: 6px 8px;
+    }
+    
+    code {
+        font-size: 0.8em;
+        padding: 1px 3px;
     }
 }
 
-/* Utility Classes */
-.highlight {
-    background-color: rgba(233, 84, 32, 0.2);
-}
-
-/* Animation for search results */
-@keyframes highlight {
-    0% { background-color: rgba(233, 84, 32, 0.4); }
-    100% { background-color: rgba(233, 84, 32, 0.1); }
-}
-
-.search-highlight {
-    animation: highlight 1.5s ease-in-out;
+/* Focus styles for accessibility */
+.nav-links a:focus,
+#search-input:focus,
+#search-button:focus,
+#theme-toggle:focus {
+    outline: 2px solid var(--ubuntu-orange);
+    outline-offset: 2px;
 }
 

@@ -4,15 +4,24 @@ A comprehensive, interactive cheat sheet for Ubuntu Linux commands. This is a st
 
 >https://design.ubuntu.com/brand
 
+## ✨ New Features
+
+- **🌙 Dark Mode Toggle** - Switch between light and dark themes
+- **📋 Click-to-Copy Commands** - Click any command to copy it to clipboard
+- **⌨️ Keyboard Navigation** - Use Ctrl+K to focus search, Escape to clear
+- **🔍 Enhanced Search** - Real-time search with result highlighting
+- **📱 Improved Mobile Experience** - Better responsive design
+
 ## Features
 
-- **Comprehensive Command Reference**: Covers essential Ubuntu/Linux commands across multiple categories
+- **Comprehensive Command Reference**: Covers essential Ubuntu/Linux commands across 15+ categories
 - **Interactive Search**: Search through commands and descriptions in real-time
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Ubuntu-themed UI**: Clean design using official Ubuntu colors and styling
 - **Smooth Navigation**: Click navigation links for smooth scrolling to sections
 - **Mobile-friendly**: Collapsible sidebar for mobile devices
 - **No Dependencies**: Pure HTML, CSS, and JavaScript - no frameworks or build tools required
+- **Accessibility**: Keyboard navigation and screen reader friendly
 
 ## Quick Start
 
@@ -41,60 +50,34 @@ linux-ultimate-reference/
 ├── js/
 │   └── script.js           # Interactive functionality
 ├── images/
-│   ├── ubuntu_cheatsheet_header.png
-│   ├── file_system_icon.png
-│   ├── system_icon.png
-│   └── network_icon.png
+│   └── logo.png            # Ubuntu logo
 └── readme.md               # This file
 ```
 
 ## Sections Covered
 
-1. **Getting Started**
-   - Terminal shortcuts
-   - Basic navigation
-   - Help commands
+1. **Getting Started** - Terminal shortcuts, basic navigation, help commands
+2. **File System Navigation** - Listing and finding files and directories
+3. **File Management** - Creating, copying, moving, deleting, permissions
+4. **Text Manipulation** - Viewing, editing, searching within files
+5. **System Information** - Hardware info, disk usage, process management
+6. **Package Management** - APT and DPKG commands
+7. **Network Commands** - Configuration, connectivity, monitoring
+8. **Compression and Archiving** - TAR, ZIP, and compressed archives
+9. **Environment Variables** - Viewing and setting environment variables
+10. **SSH & Remote Access** - SSH client commands and key management
+11. **Log Management** - System logs and journal commands
+12. **User Management** - User operations and group management
+13. **Performance Monitoring** - System performance tools
+14. **Git Commands** - Version control basics
+15. **Advanced Tips and Tricks** - Command chaining, redirections, aliases, cron jobs
 
-2. **File System Navigation**
-   - Listing files and directories
-   - Finding files and directories
+## Keyboard Shortcuts
 
-3. **File Management**
-   - Creating files and directories
-   - Copying, moving, and renaming
-   - Deleting files and directories
-   - File permissions
-
-4. **Text Manipulation**
-   - Viewing file contents
-   - Editing files
-   - Searching within files
-
-5. **System Information**
-   - System and hardware info
-   - Disk usage and management
-   - Process management
-   - Service management
-
-6. **Package Management**
-   - APT commands
-   - DPKG commands
-
-7. **Network Commands**
-   - Network configuration
-   - Connectivity testing
-   - Network monitoring
-
-8. **Compression and Archiving**
-   - TAR archives
-   - Compressed archives
-   - ZIP files
-
-9. **Advanced Tips and Tricks**
-   - Command chaining
-   - Redirections
-   - Useful aliases
-   - Cron jobs
+- **Ctrl+K** (or Cmd+K): Focus search input
+- **Enter**: Perform search
+- **Escape**: Clear search or close mobile menu
+- **Click any command**: Copy to clipboard
 
 ## Usage Tips
 
@@ -102,6 +85,17 @@ linux-ultimate-reference/
 - Use the search bar in the header to find specific commands
 - Search works across command names, descriptions, and section titles
 - Results are highlighted and the page automatically scrolls to the first match
+- Use Ctrl+K for quick search access
+
+### Copy Commands
+- Click any command (marked with code styling) to copy it to clipboard
+- Look for the clipboard icon that appears on hover
+- Great for quickly copying commands to your terminal
+
+### Dark Mode
+- Toggle between light and dark themes using the moon/sun icon
+- Theme preference is saved in your browser
+- Automatically respects your system's dark mode preference
 
 ### Navigation
 - Click any item in the sidebar to jump to that section
@@ -112,29 +106,6 @@ linux-ultimate-reference/
 - Fully responsive design adapts to all screen sizes
 - Touch-friendly interface with appropriate spacing
 - Sidebar automatically closes after selecting a section on mobile
-
-## Customization
-
-### Colors
-Ubuntu brand colors are defined as CSS custom properties in `styles.css`:
-```css
-:root {
-    --ubuntu-orange: #E95420;
-    --ubuntu-dark-orange: #C34113;
-    --ubuntu-cool-grey: #333333;
-    /* ... more colors */
-}
-```
-
-### Adding New Sections
-1. Add a new section in `index.html` with appropriate `id`
-2. Add corresponding navigation link in the sidebar
-3. Follow the existing table structure for consistency
-
-### Images
-- Place images in the `images/` directory
-- Update image paths in HTML as needed
-- Ensure images are optimized for web (compressed, appropriate format)
 
 ## Browser Compatibility
 
@@ -147,10 +118,10 @@ This site works in all modern browsers:
 ## Contributing
 
 Feel free to contribute by:
-- Adding new commands
+- Adding new commands or sections
 - Improving existing descriptions
 - Fixing typos or errors
-- Enhancing the design
+- Enhancing the design or functionality
 - Adding new features
 
 ## License
@@ -160,5 +131,5 @@ This project is open source and available under the MIT License.
 ## Credits
 
 - Ubuntu brand colors and design inspiration from Canonical
-- Font Awesome icons for navigation
+- Font Awesome icons for navigation and UI elements
 - Created for the Linux community with ❤️
