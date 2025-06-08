@@ -50,7 +50,7 @@ linux-ultimate-reference/
 ├── js/
 │   └── script.js           # Interactive functionality
 ├── images/
-│   └── logo.png            # Ubuntu logo
+│   └── ubuntu-logo.png     # Ubuntu logo
 └── readme.md               # This file
 ```
 
