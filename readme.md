@@ -11,6 +11,7 @@ A comprehensive, interactive cheat sheet for Ubuntu Linux commands. This is a st
 - **⌨️ Keyboard Navigation** - Use Ctrl+K to focus search, Escape to clear
 - **🔍 Enhanced Search** - Real-time search with result highlighting
 - **📱 Improved Mobile Experience** - Better responsive design
+- **🔝 Logo Click Navigation** - Click the Ubuntu logo to scroll to top
 
 ## Features
 
@@ -101,6 +102,7 @@ linux-ultimate-reference/
 - Click any item in the sidebar to jump to that section
 - The active section is highlighted in the sidebar as you scroll
 - On mobile, tap the hamburger menu (☰) to open/close the sidebar
+- Click the Ubuntu logo to scroll to the top of the page
 
 ### Mobile Experience
 - Fully responsive design adapts to all screen sizes

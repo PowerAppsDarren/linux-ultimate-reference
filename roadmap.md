@@ -12,6 +12,7 @@
 - Keyboard shortcuts (Ctrl+K for search, Escape to clear)
 - Active section highlighting in navigation
 - Accessibility features (ARIA labels, focus management)
+- Logo click to scroll to top functionality
 
 ---
 

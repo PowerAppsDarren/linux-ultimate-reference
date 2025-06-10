@@ -56,6 +56,12 @@ body {
     height: auto;
     margin-bottom: 5px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-header img.logo:hover {
+    opacity: 0.8;
 }
 
 .sidebar-header h2 {
