@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <a id="top"></a>
     <div class="container">
         <nav class="sidebar">
             <div class="sidebar-header">
-                <img src="images/ubuntu-logo.png" alt="Ubuntu Linux Commands Cheat Sheet" class="logo" onclick="scrollToTop()">
+                <a href="#top" class="logo-link">
+                    <img src="images/ubuntu-logo.png" alt="Ubuntu Linux Commands Cheat Sheet" class="logo">
+                </a>
                 <!--<h2>Ubuntu Commands</h2>-->
             </div>
             <ul class="nav-links">
@@ -96,7 +99,6 @@
                                     <tr>
                                         <td><code>Ctrl+E</code></td>
                                         <td>Move cursor to end of line</td>
-
                                     </tr>
                                     <tr>
                                         <td><code>Ctrl+U</code></td>
@@ -210,9 +212,6 @@
                 <!-- File System Section -->
                 <section id="file-system" class="section">
                     <h2>File System Navigation</h2>
-                    <div class="section-icon">
-                        <img src="images/file_system_icon.png" alt="File System Icon">
-                    </div>
 
                     <div class="subsection">
                         <h3>Listing Files and Directories</h3>
@@ -569,4 +568,1386 @@
                                         <td><code>tail -n N file</code></td>
                                         <td>Display last N lines</td>
                                         <td><code>tail -n 20 file.txt</code></td>
-   
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Text Searching and Replacement</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>grep pattern file</code></td>
+                                        <td>Search for pattern in file</td>
+                                        <td><code>grep "hello" file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep -r pattern dir</code></td>
+                                        <td>Search recursively in directory</td>
+                                        <td><code>grep -r "main" /src</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sed 's/old/new/' file</code></td>
+                                        <td>Replace first occurrence of old with new</td>
+                                        <td><code>sed 's/apple/orange/' fruits.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sed -i 's/old/new/g' file</code></td>
+                                        <td>Replace all occurrences of old with new in file</td>
+                                        <td><code>sed -i 's/apple/orange/g' fruits.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>awk '{print $1}' file</code></td>
+                                        <td>Print first column of file</td>
+                                        <td><code>awk '{print $1}' data.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>awk -F, '{print $2}' file</code></td>
+                                        <td>Print second column of CSV file</td>
+                                        <td><code>awk -F, '{print $2}' file.csv</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>File Encoding and Conversion</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>file file</code></td>
+                                        <td>Determine file type</td>
+                                        <td><code>file document.pdf</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -cvf archive.tar files</code></td>
+                                        <td>Create tar archive</td>
+                                        <td><code>tar -cvf backup.tar /home/user</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tar -xvf archive.tar</code></td>
+                                        <td>Extract tar archive</td>
+                                        <td><code>tar -xvf backup.tar</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gzip file</code></td>
+                                        <td>Compress file using gzip</td>
+                                        <td><code>gzip largefile.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gunzip file.gz</code></td>
+                                        <td>Decompress gzip file</td>
+                                        <td><code>gunzip largefile.gz</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zip file.zip files</code></td>
+                                        <td>Compress files into zip archive</td>
+                                        <td><code>zip backup.zip file1 file2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unzip file.zip</code></td>
+                                        <td>Extract files from zip archive</td>
+                                        <td><code>unzip backup.zip</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Information Section -->
+                <section id="system-information" class="section">
+                    <h2>System Information</h2>
+
+                    <div class="subsection">
+                        <h3>Viewing System Information</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>uname -a</code></td>
+                                        <td>Show system information</td>
+                                        <td><code>uname -a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>hostname</code></td>
+                                        <td>Show or set the system's host name</td>
+                                        <td><code>hostname</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>uptime</code></td>
+                                        <td>Show how long the system has been running</td>
+                                        <td><code>uptime</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>top</code></td>
+                                        <td>Display tasks and system status</td>
+                                        <td><code>top</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>htop</code></td>
+                                        <td>Interactive process viewer (enhanced top)</td>
+                                        <td><code>htop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>free -h</code></td>
+                                        <td>Show memory usage</td>
+                                        <td><code>free -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>df -h</code></td>
+                                        <td>Show disk space usage</td>
+                                        <td><code>df -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>du -sh directory</code></td>
+                                        <td>Show directory size</td>
+                                        <td><code>du -sh Documents</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ps aux</code></td>
+                                        <td>Show running processes</td>
+                                        <td><code>ps aux</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>kill PID</code></td>
+                                        <td>Terminate process by PID</td>
+                                        <td><code>kill 1234</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>shutdown now</code></td>
+                                        <td>Shutdown the system immediately</td>
+                                        <td><code>shutdown now</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>reboot</code></td>
+                                        <td>Reboot the system</td>
+                                        <td><code>reboot</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Network Information</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ip a</code></td>
+                                        <td>Show IP addresses and network interfaces</td>
+                                        <td><code>ip a</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ping host</code></td>
+                                        <td>Send ICMP echo request to network host</td>
+                                        <td><code>ping google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>traceroute host</code></td>
+                                        <td>Trace route to network host</td>
+                                        <td><code>traceroute google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nslookup domain</code></td>
+                                        <td>Query DNS for domain information</td>
+                                        <td><code>nslookup example.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>netstat -tuln</code></td>
+                                        <td>Show listening ports and network connections</td>
+                                        <td><code>netstat -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>curl -I url</code></td>
+                                        <td>Fetch HTTP headers from URL</td>
+                                        <td><code>curl -I http://example.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>wget url</code></td>
+                                        <td>Download file from URL</td>
+                                        <td><code>wget http://example.com/file.zip</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Package Management Section -->
+                <section id="package-management" class="section">
+                    <h2>Package Management</h2>
+
+                    <div class="subsection">
+                        <h3>APT Package Manager</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>apt update</code></td>
+                                        <td>Update package lists</td>
+                                        <td><code>apt update</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt upgrade</code></td>
+                                        <td>Upgrade installed packages</td>
+                                        <td><code>apt upgrade</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt install package</code></td>
+                                        <td>Install new package</td>
+                                        <td><code>apt install vim</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt remove package</code></td>
+                                        <td>Remove installed package</td>
+                                        <td><code>apt remove vim</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt autoremove</code></td>
+                                        <td>Remove unused packages</td>
+                                        <td><code>apt autoremove</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt search keyword</code></td>
+                                        <td>Search for packages</td>
+                                        <td><code>apt search nginx</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>apt show package</code></td>
+                                        <td>Show package details</td>
+                                        <td><code>apt show vim</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>DPKG Package Manager</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>dpkg -i package.deb</code></td>
+                                        <td>Install package from .deb file</td>
+                                        <td><code>dpkg -i package.deb</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -r package</code></td>
+                                        <td>Remove installed package</td>
+                                        <td><code>dpkg -r package</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -l</code></td>
+                                        <td>List installed packages</td>
+                                        <td><code>dpkg -l</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg -s package</code></td>
+                                        <td>Show package status</td>
+                                        <td><code>dpkg -s package</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dpkg-reconfigure package</code></td>
+                                        <td>Reconfigure installed package</td>
+                                        <td><code>dpkg-reconfigure tzdata</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Snap Package Manager</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>snap install package</code></td>
+                                        <td>Install snap package</td>
+                                        <td><code>snap install vlc</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>snap remove package</code></td>
+                                        <td>Remove snap package</td>
+                                        <td><code>snap remove vlc</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>snap list</code></td>
+                                        <td>List installed snap packages</td>
+                                        <td><code>snap list</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>snap find keyword</code></td>
+                                        <td>Search for snap packages</td>
+                                        <td><code>snap find code</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Network Commands Section -->
+                <section id="network-commands" class="section">
+                    <h2>Network Commands</h2>
+
+                    <div class="subsection">
+                        <h3>Network Configuration</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ip addr</code></td>
+                                        <td>Show IP address and network interfaces</td>
+                                        <td><code>ip addr</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ip link</code></td>
+                                        <td>Show or manipulate network interfaces</td>
+                                        <td><code>ip link</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ifconfig</code></td>
+                                        <td>Show or configure network interfaces</td>
+                                        <td><code>ifconfig</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>route -n</code></td>
+                                        <td>Show IP routing table</td>
+                                        <td><code>route -n</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ping</code></td>
+                                        <td>Send ICMP ECHO_REQUEST to network hosts</td>
+                                        <td><code>ping 8.8.8.8</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>traceroute</code></td>
+                                        <td>Print the route packets take to network host</td>
+                                        <td><code>traceroute google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nslookup</code></td>
+                                        <td>Query Internet name servers interactively</td>
+                                        <td><code>nslookup example.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dig</code></td>
+                                        <td>DNS lookup utility</td>
+                                        <td><code>dig example.com</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Network Monitoring</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>netstat -tuln</code></td>
+                                        <td>Show active listening ports</td>
+                                        <td><code>netstat -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ss -tuln</code></td>
+                                        <td>Another utility to investigate sockets</td>
+                                        <td><code>ss -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iftop</code></td>
+                                        <td>Display bandwidth usage on an interface</td>
+                                        <td><code>iftop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iptraf</code></td>
+                                        <td>Real-time network monitoring utility</td>
+                                        <td><code>iptraf</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ping</code></td>
+                                        <td>Send ICMP ECHO_REQUEST to network hosts</td>
+                                        <td><code>ping 8.8.8.8</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>traceroute</code></td>
+                                        <td>Print the route packets take to network host</td>
+                                        <td><code>traceroute google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nslookup</code></td>
+                                        <td>Query Internet name servers interactively</td>
+                                        <td><code>nslookup example.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dig</code></td>
+                                        <td>DNS lookup utility</td>
+                                        <td><code>dig example.com</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Compression Section -->
+                <section id="compression" class="section">
+                    <h2>Compression</h2>
+
+                    <div class="subsection">
+                        <h3>Creating Archives</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tar -cvf archive.tar files</code></td>
+                                        <td>Create tar archive</td>
+                                        <td><code>tar -cvf backup.tar /home/user</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gzip file</code></td>
+                                        <td>Compress file using gzip</td>
+                                        <td><code>gzip largefile.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>bzip2 file</code></td>
+                                        <td>Compress file using bzip2</td>
+                                        <td><code>bzip2 largefile.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zip file.zip files</code></td>
+                                        <td>Compress files into zip archive</td>
+                                        <td><code>zip backup.zip file1 file2</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Extracting Archives</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tar -xvf archive.tar</code></td>
+                                        <td>Extract tar archive</td>
+                                        <td><code>tar -xvf backup.tar</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gunzip file.gz</code></td>
+                                        <td>Decompress gzip file</td>
+                                        <td><code>gunzip largefile.gz</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>bunzip2 file.bz2</code></td>
+                                        <td>Decompress bzip2 file</td>
+                                        <td><code>bunzip2 largefile.bz2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unzip file.zip</code></td>
+                                        <td>Extract files from zip archive</td>
+                                        <td><code>unzip backup.zip</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Environment Variables Section -->
+                <section id="environment-variables" class="section">
+                    <h2>Environment Variables</h2>
+
+                    <div class="subsection">
+                        <h3>Viewing and Setting Variables</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>printenv</code></td>
+                                        <td>Print environment variables</td>
+                                        <td><code>printenv</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>env</code></td>
+                                        <td>Display environment variables</td>
+                                        <td><code>env</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>set VAR=value</code></td>
+                                        <td>Set environment variable</td>
+                                        <td><code>set MYVAR=hello</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unset VAR</code></td>
+                                        <td>Unset environment variable</td>
+                                        <td><code>unset MYVAR</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Common Environment Variables</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>HOME</code></td>
+                                        <td>Current user's home directory</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>USER</code></td>
+                                        <td>Current logged in user</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PATH</code></td>
+                                        <td>Directories to search for executables</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>SHELL</code></td>
+                                        <td>Path to the current shell</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>EDITOR</code></td>
+                                        <td>Default text editor</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>LANG</code></td>
+                                        <td>Default system language</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SSH & Remote Access Section -->
+                <section id="ssh-remote" class="section">
+                    <h2>SSH & Remote Access</h2>
+
+                    <div class="subsection">
+                        <h3>SSH Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ssh user@host</code></td>
+                                        <td>Connect to remote host via SSH</td>
+                                        <td><code>ssh john@192.168.1.10</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -p port user@host</code></td>
+                                        <td>Connect to remote host on specified port</td>
+                                        <td><code>ssh -p 2222 john@192.168.1.10</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>scp source user@host:dest</code></td>
+                                        <td>Copy file to remote host</td>
+                                        <td><code>scp file.txt john@192.168.1.10:/home/john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>scp user@host:file dest</code></td>
+                                        <td>Copy file from remote host</td>
+                                        <td><code>scp john@192.168.1.10:/home/john/file.txt ./</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-keygen</code></td>
+                                        <td>Generate SSH key pair</td>
+                                        <td><code>ssh-keygen</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-copy-id user@host</code></td>
+                                        <td>Install SSH key on remote host</td>
+                                        <td><code>ssh-copy-id john@192.168.1.10</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Remote Desktop</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>vncserver</code></td>
+                                        <td>Start VNC remote desktop server</td>
+                                        <td><code>vncserver</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vncviewer</code></td>
+                                        <td>Connect to VNC remote desktop</td>
+                                        <td><code>vncviewer 192.168.1.10:1</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rdp</code></td>
+                                        <td>Start RDP remote desktop client</td>
+                                        <td><code>rdp</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -X user@host</code></td>
+                                        <td>Enable X11 forwarding over SSH</td>
+                                        <td><code>ssh -X john@192.168.1.10</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Log Management Section -->
+                <section id="log-management" class="section">
+                    <h2>Log Management</h2>
+
+                    <div class="subsection">
+                        <h3>Viewing Logs</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tail -f /var/log/syslog</code></td>
+                                        <td>Follow system log in real-time</td>
+                                        <td><code>tail -f /var/log/syslog</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>less /var/log/auth.log</code></td>
+                                        <td>View authentication log</td>
+                                        <td><code>less /var/log/auth.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cat /var/log/dpkg.log</code></td>
+                                        <td>View package manager log</td>
+                                        <td><code>cat /var/log/dpkg.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>grep error /var/log/syslog</code></td>
+                                        <td>Search for errors in syslog</td>
+                                        <td><code>grep error /var/log/syslog</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Log Rotation and Compression</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>logrotate</code></td>
+                                        <td>Rotate and compress log files</td>
+                                        <td><code>logrotate /etc/logrotate.conf</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zcat file.gz</code></td>
+                                        <td>View compressed log file</td>
+                                        <td><code>zcat /var/log/syslog.1.gz</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zgrep error file.gz</code></td>
+                                        <td>Search for errors in compressed log file</td>
+                                        <td><code>zgrep error /var/log/syslog.1.gz</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Management Section -->
+                <section id="user-management" class="section">
+                    <h2>User Management</h2>
+
+                    <div class="subsection">
+                        <h3>Managing Users</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>adduser username</code></td>
+                                        <td>Add a new user</td>
+                                        <td><code>adduser john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>deluser username</code></td>
+                                        <td>Delete a user</td>
+                                        <td><code>deluser john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod -aG group username</code></td>
+                                        <td>Add user to group</td>
+                                        <td><code>usermod -aG sudo john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>passwd username</code></td>
+                                        <td>Change user password</td>
+                                        <td><code>passwd john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chage -l username</code></td>
+                                        <td>Show user password expiration info</td>
+                                        <td><code>chage -l john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>last username</code></td>
+                                        <td>Show last login of user</td>
+                                        <td><code>last john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>whoami</code></td>
+                                        <td>Show current logged in user</td>
+                                        <td><code>whoami</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Managing Groups</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>addgroup groupname</code></td>
+                                        <td>Add a new group</td>
+                                        <td><code>addgroup developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>delgroup groupname</code></td>
+                                        <td>Delete a group</td>
+                                        <td><code>delgroup developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupmod -n newname oldname</code></td>
+                                        <td>Rename a group</td>
+                                        <td><code>groupmod -n devs developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groups username</code></td>
+                                        <td>Show groups of a user</td>
+                                        <td><code>groups john</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Monitoring Section -->
+                <section id="performance-monitoring" class="section">
+                    <h2>Performance Monitoring</h2>
+
+                    <div class="subsection">
+                        <h3>Monitoring System Performance</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>top</code></td>
+                                        <td>Display Linux tasks</td>
+                                        <td><code>top</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>htop</code></td>
+                                        <td>Interactive process viewer</td>
+                                        <td><code>htop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iotop</code></td>
+                                        <td>Monitor disk I/O usage by processes</td>
+                                        <td><code>iotop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>free -h</code></td>
+                                        <td>Show memory usage</td>
+                                        <td><code>free -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmstat</code></td>
+                                        <td>Report virtual memory statistics</td>
+                                        <td><code>vmstat</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>netstat -tuln</code></td>
+                                        <td>Show network connections and listening ports</td>
+                                        <td><code>netstat -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sar</code></td>
+                                        <td>Collect and report system activity information</td>
+                                        <td><code>sar -u 1 3</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Monitoring Disk Usage</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>df -h</code></td>
+                                        <td>Show disk space usage</td>
+                                        <td><code>df -h</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>du -sh directory</code></td>
+                                        <td>Show directory size</td>
+                                        <td><code>du -sh Documents</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ncdu</code></td>
+                                        <td>Disk usage analyzer with an ncurses interface</td>
+                                        <td><code>ncdu</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Monitoring Network Performance</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ping</code></td>
+                                        <td>Send ICMP ECHO_REQUEST to network hosts</td>
+                                        <td><code>ping 8.8.8.8</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>traceroute</code></td>
+                                        <td>Print the route packets take to network host</td>
+                                        <td><code>traceroute google.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>netstat -tuln</code></td>
+                                        <td>Show network connections and listening ports</td>
+                                        <td><code>netstat -tuln</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iftop</code></td>
+                                        <td>Display bandwidth usage on an interface</td>
+                                        <td><code>iftop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iptraf</code></td>
+                                        <td>Real-time network monitoring utility</td>
+                                        <td><code>iptraf</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Git Commands Section -->
+                <section id="git-commands" class="section">
+                    <h2>Git Commands</h2>
+
+                    <div class="subsection">
+                        <h3>Getting Started with Git</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git config --global user.name "Name"</code></td>
+                                        <td>Set Git username</td>
+                                        <td><code>git config --global user.name "John Doe"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git config --global user.email "email@example.com"</code></td>
+                                        <td>Set Git email</td>
+                                        <td><code>git config --global user.email "john.doe@example.com"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git init</code></td>
+                                        <td>Initialize a new Git repository</td>
+                                        <td><code>git init</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git clone url</code></td>
+                                        <td>Clone a repository into a new directory</td>
+                                        <td><code>git clone https://github.com/user/repo.git</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git status</code></td>
+                                        <td>Show the working tree status</td>
+                                        <td><code>git status</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git add file</code></td>
+                                        <td>Add a file to the staging area</td>
+                                        <td><code>git add README.md</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git commit -m "message"</code></td>
+                                        <td>Commit changes with a message</td>
+                                        <td><code>git commit -m "Initial commit"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git push origin branch</code></td>
+                                        <td>Push changes to the remote repository</td>
+                                        <td><code>git push origin main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git pull</code></td>
+                                        <td>Fetch and merge changes from the remote repository</td>
+                                        <td><code>git pull</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git branch</code></td>
+                                        <td>List, create, or delete branches</td>
+                                        <td><code>git branch</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git checkout branch</code></td>
+                                        <td>Switch to a different branch</td>
+                                        <td><code>git checkout feature-branch</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git merge branch</code></td>
+                                        <td>Merge a branch into the current branch</td>
+                                        <td><code>git merge feature-branch</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git log</code></td>
+                                        <td>Show commit logs</td>
+                                        <td><code>git log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git diff</code></td>
+                                        <td>Show changes between commits, commit and working tree, etc.</td>
+                                        <td><code>git diff</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Advanced Git Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git stash</code></td>
+                                        <td>Stash the changes in a dirty working directory</td>
+                                        <td><code>git stash</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git stash pop</code></td>
+                                        <td>Apply the changes stashed away by <code>git stash</code></td>
+                                        <td><code>git stash pop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote -v</code></td>
+                                        <td>Show remote repositories</td>
+                                        <td><code>git remote -v</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote add name url</code></td>
+                                        <td>Add a new remote repository</td>
+                                        <td><code>git remote add origin https://github.com/user/repo.git</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote remove name</code></td>
+                                        <td>Remove a remote repository</td>
+                                        <td><code>git remote remove origin</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git tag</code></td>
+                                        <td>List, create, or delete tags</td>
+                                        <td><code>git tag</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git push origin --tags</code></td>
+                                        <td>Push tags to the remote repository</td>
+                                        <td><code>git push origin --tags</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git rebase</code></td>
+                                        <td>Reapply commits on top of another base tip</td>
+                                        <td><code>git rebase main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git cherry-pick commit</code></td>
+                                        <td>Apply the changes introduced by some existing commits</td>
+                                        <td><code>git cherry-pick abc123</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git reset</code></td>
+                                        <td>Reset current HEAD to the specified state</td>
+                                        <td><code>git reset --hard HEAD~1</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git clean</code></td>
+                                        <td>Remove untracked files from the working tree</td>
+                                        <td><code>git clean -f</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Tips Section -->
+                <section id="advanced-tips" class="section">
+                    <h2>Advanced Tips</h2>
+
+                    <div class="subsection">
+                        <h3>Command Line Tips</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tip</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>!!</code></td>
+                                        <td>Repeat last command</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>!n</code></td>
+                                        <td>Repeat command number n in history</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>!string</code></td>
+                                        <td>Repeat last command that started with "string"</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Shift+C</code> / <code>Ctrl+Shift+V</code></td>
+                                        <td>Copy/Paste in terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Alt+Arrow Keys</code></td>
+                                        <td>Navigate between words in command line</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Arrow Keys</code></td>
+                                        <td>Navigate between commands in history</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Shift+T</code></td>
+                                        <td>Open new terminal tab</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctrl+Page Up/Down</code></td>
+                                        <td>Switch between terminal tabs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Shell Scripting Tips</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tip</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>#!/bin/bash</code></td>
+                                        <td>Specify script interpreter</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chmod +x script.sh</code></td>
+                                        <td>Make script executable</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>./script.sh</code></td>
+                                        <td>Run script in current shell</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>source script.sh</code></td>
+                                        <td>Run script and apply changes to current shell</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>echo "text" > file</code></td>
+                                        <td>Write text to file</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>echo "text" >> file</code></td>
+                                        <td>Append text to file</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>read var</code></td>
+                                        <td>Read user input into variable</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>if [ condition ]; then</code></td>
+                                        <td>Start of an if statement</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>fi</code></td>
+                                        <td>End of an if statement</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>for var in list; do</code></td>
+                                        <td>Start of a for loop</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>done</code></td>
+                                        <td>End of a loop</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>function_name() {}</code></td>
+                                        <td>Define a function</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>return</code></td>
+                                        <td>Return from a function</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>System Administration Tips</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tip</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>sudo</code></td>
+                                        <td>Execute command as superuser</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>su</code></td>
+                                        <td>Switch user</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>visudo</code></td>
+                                        <td>Edit sudoers file</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>systemctl</code></td>
+                                        <td>Control the systemd system and service manager</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>journalctl</code></td>
+                                        <td>Query the systemd journal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>crontab -e</code></td>
+                                        <td>Edit crontab (scheduled tasks)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>at</code></td>
+                                        <td>Schedule a command to run once at a particular time</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>batch</code></td>
+                                        <td>Schedule a command to run when system load levels permit</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
