@@ -1275,6 +1275,1057 @@
                     </div>
                 </section>
 
+                <!-- Environment Variables Section -->
+                <section id="environment-variables" class="section">
+                    <h2>Environment Variables</h2>
+
+                    <div class="subsection">
+                        <h3>Working with Environment Variables</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>env</code></td>
+                                        <td>Display all environment variables</td>
+                                        <td><code>env</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>echo $VARIABLE</code></td>
+                                        <td>Display specific variable value</td>
+                                        <td><code>echo $HOME</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>export VARIABLE=value</code></td>
+                                        <td>Set environment variable</td>
+                                        <td><code>export EDITOR=vim</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>unset VARIABLE</code></td>
+                                        <td>Remove environment variable</td>
+                                        <td><code>unset TEMP_VAR</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>set</code></td>
+                                        <td>Display all shell variables</td>
+                                        <td><code>set</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>printenv</code></td>
+                                        <td>Print environment variables</td>
+                                        <td><code>printenv</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>printenv VARIABLE</code></td>
+                                        <td>Print specific variable</td>
+                                        <td><code>printenv PATH</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Common Environment Variables</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Description</th>
+                                        <th>Example Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>HOME</code></td>
+                                        <td>User's home directory</td>
+                                        <td><code>/home/username</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PATH</code></td>
+                                        <td>Executable search path</td>
+                                        <td><code>/usr/bin:/bin:/usr/local/bin</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>USER</code></td>
+                                        <td>Current username</td>
+                                        <td><code>john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>SHELL</code></td>
+                                        <td>Current shell</td>
+                                        <td><code>/bin/bash</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PWD</code></td>
+                                        <td>Current working directory</td>
+                                        <td><code>/home/john/documents</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>LANG</code></td>
+                                        <td>System language</td>
+                                        <td><code>en_US.UTF-8</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>TERM</code></td>
+                                        <td>Terminal type</td>
+                                        <td><code>xterm-256color</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Persistent Environment Variables</h3>
+                        <div class="code-block">
+                            <p>To make environment variables permanent, add them to one of these files:</p>
+                            <pre><code># For current user only
+~/.bashrc              # Bash shell
+~/.profile             # General profile
+~/.bash_profile        # Bash login shell
+
+# For all users (system-wide)
+/etc/environment       # System environment
+/etc/profile           # System profile
+/etc/bash.bashrc       # System bash config</code></pre>
+                            
+                            <p>Example: Adding to PATH in ~/.bashrc:</p>
+                            <pre><code>echo 'export PATH=$PATH:/new/path' >> ~/.bashrc
+source ~/.bashrc  # Reload the configuration</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SSH & Remote Access Section -->
+                <section id="ssh-remote" class="section">
+                    <h2>SSH & Remote Access</h2>
+
+                    <div class="subsection">
+                        <h3>SSH Connection Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ssh user@host</code></td>
+                                        <td>Connect to remote host</td>
+                                        <td><code>ssh john@192.168.1.100</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -p port user@host</code></td>
+                                        <td>Connect using specific port</td>
+                                        <td><code>ssh -p 2222 john@server.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -i keyfile user@host</code></td>
+                                        <td>Connect using key file</td>
+                                        <td><code>ssh -i ~/.ssh/id_rsa john@server.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -X user@host</code></td>
+                                        <td>Enable X11 forwarding</td>
+                                        <td><code>ssh -X john@server.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -L localport:host:remoteport user@host</code></td>
+                                        <td>Local port forwarding</td>
+                                        <td><code>ssh -L 8080:localhost:80 john@server.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh -R remoteport:host:localport user@host</code></td>
+                                        <td>Remote port forwarding</td>
+                                        <td><code>ssh -R 8080:localhost:80 john@server.com</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>SSH Key Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ssh-keygen</code></td>
+                                        <td>Generate SSH key pair</td>
+                                        <td><code>ssh-keygen -t rsa -b 4096</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-copy-id user@host</code></td>
+                                        <td>Copy public key to server</td>
+                                        <td><code>ssh-copy-id john@server.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-add keyfile</code></td>
+                                        <td>Add key to SSH agent</td>
+                                        <td><code>ssh-add ~/.ssh/id_rsa</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-agent</code></td>
+                                        <td>Start SSH agent</td>
+                                        <td><code>eval $(ssh-agent)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-add -l</code></td>
+                                        <td>List keys in SSH agent</td>
+                                        <td><code>ssh-add -l</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ssh-keyscan host</code></td>
+                                        <td>Get host's public key</td>
+                                        <td><code>ssh-keyscan github.com >> ~/.ssh/known_hosts</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>File Transfer Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>scp source user@host:dest</code></td>
+                                        <td>Copy file to remote host</td>
+                                        <td><code>scp file.txt john@server.com:/home/john/</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>scp user@host:source dest</code></td>
+                                        <td>Copy file from remote host</td>
+                                        <td><code>scp john@server.com:/home/john/file.txt .</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>scp -r source user@host:dest</code></td>
+                                        <td>Copy directory recursively</td>
+                                        <td><code>scp -r folder/ john@server.com:/home/john/</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rsync -avz source user@host:dest</code></td>
+                                        <td>Sync files/directories</td>
+                                        <td><code>rsync -avz ~/docs/ john@server.com:~/backup/</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sftp user@host</code></td>
+                                        <td>Interactive secure FTP</td>
+                                        <td><code>sftp john@server.com</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>SSH Configuration</h3>
+                        <div class="code-block">
+                            <p>Create/edit ~/.ssh/config for easier connections:</p>
+                            <pre><code>Host myserver
+    HostName server.example.com
+    User john
+    Port 2222
+    IdentityFile ~/.ssh/id_rsa_server
+
+Host github
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github</code></pre>
+                            
+                            <p>Then connect simply with:</p>
+                            <pre><code>ssh myserver
+ssh github</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Log Management Section -->
+                <section id="log-management" class="section">
+                    <h2>Log Management</h2>
+
+                    <div class="subsection">
+                        <h3>System Log Files</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Log File</th>
+                                        <th>Description</th>
+                                        <th>View Command</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>/var/log/syslog</code></td>
+                                        <td>System messages</td>
+                                        <td><code>sudo less /var/log/syslog</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/auth.log</code></td>
+                                        <td>Authentication logs</td>
+                                        <td><code>sudo less /var/log/auth.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/kern.log</code></td>
+                                        <td>Kernel logs</td>
+                                        <td><code>sudo less /var/log/kern.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/dpkg.log</code></td>
+                                        <td>Package manager logs</td>
+                                        <td><code>sudo less /var/log/dpkg.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/boot.log</code></td>
+                                        <td>Boot messages</td>
+                                        <td><code>sudo less /var/log/boot.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/apache2/</code></td>
+                                        <td>Apache web server logs</td>
+                                        <td><code>sudo less /var/log/apache2/error.log</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/var/log/mysql/</code></td>
+                                        <td>MySQL database logs</td>
+                                        <td><code>sudo less /var/log/mysql/error.log</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Log Viewing Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>dmesg</code></td>
+                                        <td>Display kernel ring buffer</td>
+                                        <td><code>dmesg | less</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>journalctl</code></td>
+                                        <td>Query systemd journal</td>
+                                        <td><code>journalctl -xe</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>journalctl -u service</code></td>
+                                        <td>View logs for specific service</td>
+                                        <td><code>journalctl -u apache2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>journalctl -f</code></td>
+                                        <td>Follow journal in real-time</td>
+                                        <td><code>journalctl -f</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>journalctl --since</code></td>
+                                        <td>Show logs since specific time</td>
+                                        <td><code>journalctl --since "1 hour ago"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>last</code></td>
+                                        <td>Show login history</td>
+                                        <td><code>last</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lastlog</code></td>
+                                        <td>Show last login for all users</td>
+                                        <td><code>lastlog</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Log Rotation and Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>logrotate</code></td>
+                                        <td>Rotate log files</td>
+                                        <td><code>sudo logrotate /etc/logrotate.conf</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>logrotate -f</code></td>
+                                        <td>Force log rotation</td>
+                                        <td><code>sudo logrotate -f /etc/logrotate.conf</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zcat logfile.gz</code></td>
+                                        <td>View compressed logs</td>
+                                        <td><code>zcat /var/log/syslog.1.gz</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>zgrep pattern logfile.gz</code></td>
+                                        <td>Search compressed logs</td>
+                                        <td><code>zgrep "error" /var/log/syslog.*.gz</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Log Analysis Tools</h3>
+                        <div class="code-block">
+                            <p>Useful commands for log analysis:</p>
+                            <pre><code># Count occurrences of IP addresses in access log
+awk '{print $1}' /var/log/apache2/access.log | sort | uniq -c | sort -rn
+
+# Find most common 404 errors
+grep " 404 " /var/log/apache2/access.log | awk '{print $7}' | sort | uniq -c | sort -rn
+
+# Monitor auth failures
+grep "Failed password" /var/log/auth.log | tail -20
+
+# Watch logs in real-time with highlighting
+tail -f /var/log/syslog | grep --color=auto -E "error|warning|critical"</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Management Section -->
+                <section id="user-management" class="section">
+                    <h2>User Management</h2>
+
+                    <div class="subsection">
+                        <h3>User Account Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>useradd username</code></td>
+                                        <td>Create new user</td>
+                                        <td><code>sudo useradd john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>useradd -m -s /bin/bash username</code></td>
+                                        <td>Create user with home and shell</td>
+                                        <td><code>sudo useradd -m -s /bin/bash john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel username</code></td>
+                                        <td>Delete user</td>
+                                        <td><code>sudo userdel john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel -r username</code></td>
+                                        <td>Delete user and home directory</td>
+                                        <td><code>sudo userdel -r john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod -aG group username</code></td>
+                                        <td>Add user to group</td>
+                                        <td><code>sudo usermod -aG sudo john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod -l newname oldname</code></td>
+                                        <td>Change username</td>
+                                        <td><code>sudo usermod -l johnny john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>passwd username</code></td>
+                                        <td>Set/change user password</td>
+                                        <td><code>sudo passwd john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>passwd</code></td>
+                                        <td>Change your own password</td>
+                                        <td><code>passwd</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Group Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>groupadd groupname</code></td>
+                                        <td>Create new group</td>
+                                        <td><code>sudo groupadd developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupdel groupname</code></td>
+                                        <td>Delete group</td>
+                                        <td><code>sudo groupdel developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupmod -n newname oldname</code></td>
+                                        <td>Rename group</td>
+                                        <td><code>sudo groupmod -n devs developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groups username</code></td>
+                                        <td>Show user's groups</td>
+                                        <td><code>groups john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>id username</code></td>
+                                        <td>Show user and group IDs</td>
+                                        <td><code>id john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gpasswd -a user group</code></td>
+                                        <td>Add user to group</td>
+                                        <td><code>sudo gpasswd -a john developers</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gpasswd -d user group</code></td>
+                                        <td>Remove user from group</td>
+                                        <td><code>sudo gpasswd -d john developers</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>User Information Commands</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>who</code></td>
+                                        <td>Show logged in users</td>
+                                        <td><code>who</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>w</code></td>
+                                        <td>Show logged users and activity</td>
+                                        <td><code>w</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>whoami</code></td>
+                                        <td>Display current username</td>
+                                        <td><code>whoami</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>finger username</code></td>
+                                        <td>Show user information</td>
+                                        <td><code>finger john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>su username</code></td>
+                                        <td>Switch to another user</td>
+                                        <td><code>su john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>su - username</code></td>
+                                        <td>Switch user with login shell</td>
+                                        <td><code>su - john</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sudo -u user command</code></td>
+                                        <td>Run command as another user</td>
+                                        <td><code>sudo -u john ls /home/john</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>User Configuration Files</h3>
+                        <div class="code-block">
+                            <p>Important user-related files:</p>
+                            <pre><code>/etc/passwd     # User account information
+/etc/shadow     # Encrypted passwords
+/etc/group      # Group information
+/etc/sudoers    # Sudo privileges
+/home/username/ # User home directories</code></pre>
+                            
+                            <p>To edit sudoers file safely:</p>
+                            <pre><code>sudo visudo</code></pre>
+                            
+                            <p>Example sudoers entry:</p>
+                            <pre><code># Allow john to run all commands with sudo
+john ALL=(ALL:ALL) ALL
+
+# Allow developers group to restart apache without password
+%developers ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart apache2</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Monitoring Section -->
+                <section id="performance-monitoring" class="section">
+                    <h2>Performance Monitoring</h2>
+
+                    <div class="subsection">
+                        <h3>CPU and Memory Monitoring</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>top</code></td>
+                                        <td>Real-time process viewer</td>
+                                        <td><code>top</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>htop</code></td>
+                                        <td>Interactive process viewer</td>
+                                        <td><code>htop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vmstat</code></td>
+                                        <td>Virtual memory statistics</td>
+                                        <td><code>vmstat 2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mpstat</code></td>
+                                        <td>CPU statistics</td>
+                                        <td><code>mpstat -P ALL 2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sar</code></td>
+                                        <td>System activity reporter</td>
+                                        <td><code>sar -u 2 5</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>free -m</code></td>
+                                        <td>Memory usage in MB</td>
+                                        <td><code>free -m</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>uptime</code></td>
+                                        <td>System uptime and load</td>
+                                        <td><code>uptime</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Disk I/O Monitoring</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>iostat</code></td>
+                                        <td>I/O statistics</td>
+                                        <td><code>iostat -x 2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iotop</code></td>
+                                        <td>I/O usage by process</td>
+                                        <td><code>sudo iotop</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>hdparm -t device</code></td>
+                                        <td>Test disk read speed</td>
+                                        <td><code>sudo hdparm -t /dev/sda</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dd</code></td>
+                                        <td>Disk write speed test</td>
+                                        <td><code>dd if=/dev/zero of=test bs=1M count=1024</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Network Performance</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>nload</code></td>
+                                        <td>Network traffic monitor</td>
+                                        <td><code>nload</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>iftop</code></td>
+                                        <td>Network bandwidth by connection</td>
+                                        <td><code>sudo iftop -i eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nethogs</code></td>
+                                        <td>Network usage by process</td>
+                                        <td><code>sudo nethogs</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vnstat</code></td>
+                                        <td>Network traffic statistics</td>
+                                        <td><code>vnstat -i eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>speedtest-cli</code></td>
+                                        <td>Internet speed test</td>
+                                        <td><code>speedtest-cli</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>System Monitoring Tools</h3>
+                        <div class="code-block">
+                            <p>Monitor system resources with watch:</p>
+                            <pre><code># Update every 2 seconds
+watch -n 2 free -m
+watch -n 2 df -h
+watch -n 1 'ps aux | sort -nrk 3,3 | head -n 5'  # Top 5 CPU users</code></pre>
+                            
+                            <p>Create a simple monitoring script:</p>
+                            <pre><code>#!/bin/bash
+echo "=== System Performance Report ==="
+echo "Date: $(date)"
+echo ""
+echo "CPU Load:"
+uptime
+echo ""
+echo "Memory Usage:"
+free -h
+echo ""
+echo "Disk Usage:"
+df -h
+echo ""
+echo "Top 5 Processes:"
+ps aux | sort -nrk 3,3 | head -n 6</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Git Commands Section -->
+                <section id="git-commands" class="section">
+                    <h2>Git Commands</h2>
+
+                    <div class="subsection">
+                        <h3>Basic Git Operations</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git init</code></td>
+                                        <td>Initialize new repository</td>
+                                        <td><code>git init</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git clone url</code></td>
+                                        <td>Clone remote repository</td>
+                                        <td><code>git clone https://github.com/user/repo.git</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git status</code></td>
+                                        <td>Check repository status</td>
+                                        <td><code>git status</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git add file</code></td>
+                                        <td>Stage file for commit</td>
+                                        <td><code>git add file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git add .</code></td>
+                                        <td>Stage all changes</td>
+                                        <td><code>git add .</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git commit -m "message"</code></td>
+                                        <td>Commit staged changes</td>
+                                        <td><code>git commit -m "Add new feature"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git push</code></td>
+                                        <td>Push to remote repository</td>
+                                        <td><code>git push origin main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git pull</code></td>
+                                        <td>Pull from remote repository</td>
+                                        <td><code>git pull origin main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git log</code></td>
+                                        <td>View commit history</td>
+                                        <td><code>git log --oneline</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git diff</code></td>
+                                        <td>Show unstaged changes</td>
+                                        <td><code>git diff</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Branching and Merging</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git branch</code></td>
+                                        <td>List branches</td>
+                                        <td><code>git branch</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git branch name</code></td>
+                                        <td>Create new branch</td>
+                                        <td><code>git branch feature-x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git checkout branch</code></td>
+                                        <td>Switch to branch</td>
+                                        <td><code>git checkout feature-x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git checkout -b branch</code></td>
+                                        <td>Create and switch to branch</td>
+                                        <td><code>git checkout -b feature-y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git merge branch</code></td>
+                                        <td>Merge branch into current</td>
+                                        <td><code>git merge feature-x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git branch -d branch</code></td>
+                                        <td>Delete branch</td>
+                                        <td><code>git branch -d feature-x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git rebase branch</code></td>
+                                        <td>Rebase current branch</td>
+                                        <td><code>git rebase main</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Remote Repository Management</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git remote -v</code></td>
+                                        <td>List remote repositories</td>
+                                        <td><code>git remote -v</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote add name url</code></td>
+                                        <td>Add remote repository</td>
+                                        <td><code>git remote add origin https://github.com/user/repo.git</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git fetch</code></td>
+                                        <td>Fetch from remote</td>
+                                        <td><code>git fetch origin</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git push -u origin branch</code></td>
+                                        <td>Push branch and set upstream</td>
+                                        <td><code>git push -u origin feature-x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote rename old new</code></td>
+                                        <td>Rename remote</td>
+                                        <td><code>git remote rename origin upstream</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git remote remove name</code></td>
+                                        <td>Remove remote</td>
+                                        <td><code>git remote remove upstream</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Undoing Changes</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git reset file</code></td>
+                                        <td>Unstage file</td>
+                                        <td><code>git reset file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git checkout -- file</code></td>
+                                        <td>Discard changes in file</td>
+                                        <td><code>git checkout -- file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git reset --hard HEAD</code></td>
+                                        <td>Discard all local changes</td>
+                                        <td><code>git reset --hard HEAD</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git revert commit</code></td>
+                                        <td>Create new commit undoing changes</td>
+                                        <td><code>git revert abc123</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git commit --amend</code></td>
+                                        <td>Modify last commit</td>
+                                        <td><code>git commit --amend -m "New message"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git stash</code></td>
+                                        <td>Save changes temporarily</td>
+                                        <td><code>git stash save "Work in progress"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git stash pop</code></td>
+                                        <td>Apply and remove stashed changes</td>
+                                        <td><code>git stash pop</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Git Configuration</h3>
+                        <div class="code-block">
+                            <p>Set up Git identity:</p>
+                            <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+                            
+                            <p>Common Git aliases:</p>
+                            <pre><code>git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'</code></pre>
+                            
+                            <p>View configuration:</p>
+                            <pre><code>git config --list
+git config user.name</code></pre>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Advanced Tips Section -->
                 <section id="advanced-tips" class="section">
                     <h2>Advanced Tips and Tricks</h2>
